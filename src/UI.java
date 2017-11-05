@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import org.json.simple.parser.ParseException;
@@ -23,8 +24,26 @@ public class UI {
         frame.setContentPane(mainPane);
         getFile = new JSONStuff();
 
-        loadJSON = new JButton("Load JSON");
-        loadJSON.addActionListener(new ActionListener() {
+        JMenuBar menuBar = new JMenuBar();
+        frame.setJMenuBar(menuBar);
+
+        JMenu mnLoadJSON = new JMenu("File");
+        menuBar.add(mnLoadJSON);
+
+        JMenuItem mntmLoad = new JMenuItem("Load JSON");
+        mntmLoad.setMnemonic(KeyEvent.VK_O);
+        mntmLoad.setAccelerator(
+                KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.ALT_MASK));
+        JMenuItem mntmExit = new JMenuItem("Exit");
+        mntmExit.setMnemonic(KeyEvent.VK_E);
+        mntmExit.setAccelerator(
+                KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.ALT_MASK));
+
+        mnLoadJSON.add(mntmLoad);
+        mnLoadJSON.add(mntmExit);
+
+        // loadJSON = new JButton("Load JSON");
+        mntmLoad.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
@@ -76,7 +95,6 @@ public class UI {
         });
 
         frame.getContentPane().setLayout(new FlowLayout());
-        frame.add(loadJSON);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(1366, 768));
         frame.pack();
