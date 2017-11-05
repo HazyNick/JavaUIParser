@@ -32,8 +32,6 @@ public class JSONStuff {
             String height = (String) element.get("height");
             String width = (String) element.get("width");
             String fontSize = (String) element.get("fontSize");
-            if(!fontSize.equals(""))
-                fontSize = fontSize.substring(0, fontSize.length()-2);
             String leftPosition = (String) element.get("leftPosition");
             if(!leftPosition.equals(""))
                 leftPosition = leftPosition.substring(0, leftPosition.length()-2);
@@ -41,7 +39,8 @@ public class JSONStuff {
             if(!topPosition.equals(""))
                 topPosition = topPosition.substring(0, topPosition.length()-2);
 
-            /* Checkers in case you want to check something regarding the extracted data.
+            /*
+            //Checkers in case you want to check something regarding the extracted data.
             System.out.println("Input type is: " + inputType);
             System.out.println("Placeholder is: " + placeholder);
             System.out.println("Height is: " + height);
