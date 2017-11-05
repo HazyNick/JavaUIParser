@@ -43,9 +43,7 @@ public class UI {
             }
         });
 
-        File selectedFile = fileChooser.getSelectedFile();
-
-        ArrayList<Element> elements = JSON.extractData(getFile.extractData(selectedFile));
+        
 
         frame.getContentPane().setLayout(new FlowLayout());
         frame.add(loadJSON);
