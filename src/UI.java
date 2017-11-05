@@ -42,6 +42,14 @@ public class UI {
         mnLoadJSON.add(mntmLoad);
         mnLoadJSON.add(mntmExit);
 
+        mntmExit.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                System.exit(0);;
+            }
+        });
         // loadJSON = new JButton("Load JSON");
         mntmLoad.addActionListener(new ActionListener() {
             @Override
