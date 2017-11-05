@@ -18,7 +18,7 @@ public class JSONStuff {
 
     }
 
-    public void extractData(File JSONfile) throws IOException, ParseException {
+    public ArrayList<Element> extractData(File JSONfile) throws IOException, ParseException {
         ArrayList<Element> elements = new ArrayList();
 
         JSONParser parser = new JSONParser();
@@ -45,9 +45,12 @@ public class JSONStuff {
 
             elements.add(new Element(inputType, placeholder, height, width, fontSize, leftPosition, topPosition));
         }
+
+        return elements;
     }
 
     public void placeInGUI() {
+
 
     }
 }
