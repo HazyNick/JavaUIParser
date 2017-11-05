@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import org.json.simple.parser.ParseException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class UI {
     private JFrame frame;
@@ -41,6 +42,10 @@ public class UI {
                 }
             }
         });
+
+        File selectedFile = fileChooser.getSelectedFile();
+
+        ArrayList<Element> elements = JSON.extractData(getFile.extractData(selectedFile));
 
         frame.getContentPane().setLayout(new FlowLayout());
         frame.add(loadJSON);
