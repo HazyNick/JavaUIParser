@@ -32,9 +32,16 @@ public class JSONStuff {
             String height = (String) element.get("height");
             String width = (String) element.get("width");
             String fontSize = (String) element.get("fontSize");
+            if(!fontSize.equals(""))
+                fontSize = fontSize.substring(0, fontSize.length()-2);
             String leftPosition = (String) element.get("leftPosition");
+            if(!leftPosition.equals(""))
+                leftPosition = leftPosition.substring(0, leftPosition.length()-2);
             String topPosition = (String) element.get("topPosition");
+            if(!topPosition.equals(""))
+                topPosition = topPosition.substring(0, topPosition.length()-2);
 
+            /* Checkers in case you want to check something regarding the extracted data.
             System.out.println("Input type is: " + inputType);
             System.out.println("Placeholder is: " + placeholder);
             System.out.println("Height is: " + height);
@@ -42,15 +49,10 @@ public class JSONStuff {
             System.out.println("Font size is: " + fontSize);
             System.out.println("Left position is: " + leftPosition);
             System.out.println("Top position is: " + topPosition);
-
+            */
             elements.add(new Element(inputType, placeholder, height, width, fontSize, leftPosition, topPosition));
         }
 
         return elements;
-    }
-
-    public void placeInGUI() {
-
-
     }
 }
