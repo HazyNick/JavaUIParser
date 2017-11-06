@@ -76,7 +76,7 @@ public class UI {
                     // add statement to say na oh my, sorry to say, wala kang laman
                 }
                 else {
-                    for(int i = 0; i < element.size(); i++) {
+                    for(int i = element.size()-1; i >= 0; i--) {
                         switch(element.get(i).getInputType()) {
                             case "text": JTextField tf = new JTextField(element.get(i).getPlaceholder());
                                          tf.setFont(new Font("Serif", Font.PLAIN, Integer.parseInt(element.get(i).getFontSize())));
