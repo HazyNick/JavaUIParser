@@ -84,7 +84,7 @@ public class UI {
                                          tf.setLocation(Integer.parseInt(element.get(i).getLeftPosition()), Integer.parseInt(element.get(i).getTopPosition()));
                                          frame.add(tf);
                                 break;
-                            case "label": JLabel l = new JLabel(element.get(i).getPlaceholder());
+                            case "label": JLabel l = new JLabel(element.get(i).getPlaceholder(), SwingConstants.CENTER);
                                           l.setFont(new Font("Serif", Font.PLAIN, Integer.parseInt(element.get(i).getFontSize())));
                                           l.setSize(Integer.parseInt(element.get(i).getWidth()),Integer.parseInt(element.get(i).getHeight()));
                                           l.setLocation(Integer.parseInt(element.get(i).getLeftPosition()), Integer.parseInt(element.get(i).getTopPosition()));
@@ -107,6 +107,7 @@ public class UI {
         frame.getContentPane().setLayout(new FlowLayout());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(1366, 768));
+        frame.setResizable(false);
         frame.pack();
         frame.setVisible(true);
     }
